@@ -35,6 +35,9 @@ export class PasswordCheckVerification {
 
   static readonly USERNAME_HASH_PREFIX_LENGTH = 26;
 
+  static readonly crypto: Promise<EcCommutativeCipherImpl> =
+      EcCommutativeCipherImpl.createEcCommutativeCipherImpl();
+
   /**
    * Private constructor. Use PasswordCheckVerification.create to build a new
    * instance.
@@ -114,9 +117,7 @@ export class PasswordCheckVerification {
    * verification.
    */
   private static async initEcCipher(): Promise<EcCommutativeCipher> {
-    const crypto: EcCommutativeCipherImpl =
-        await EcCommutativeCipherImpl.createEcCommutativeCipherImpl();
-
+    const crypto = await PasswordCheckVerification.crypto;
     return EcCommutativeCipher.create(
         crypto, PasswordCheckVerification.CURVE_ID,
         PasswordCheckVerification.HASH_TYPE);
