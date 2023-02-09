@@ -1,10 +1,10 @@
 {
-  "name": "typescript-recaptcha-password-check",
+  "name": "recaptcha-password-check-helpers",
   "version": "1.0.0",
   "description": "A client library for Typescript for reCAPTCHA's private password check API.",
   "author": "reCAPTCHA Team <no-reply@google.com>",
-  "repository": "GoogleCloudPlatform/typescript-recaptcha-password-check",
-  "homepage": "https://github.com/GoogleCloudPlatform/typescript-recaptcha-password-check#readme",
+  "repository": "GoogleCloudPlatform/typescript-recaptcha-password-check-helpers",
+  "homepage": "https://github.com/GoogleCloudPlatform/typescript-recaptcha-password-check-helpers#readme",
   "license": "Apache-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
