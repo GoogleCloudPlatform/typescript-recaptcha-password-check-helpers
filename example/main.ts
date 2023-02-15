@@ -16,7 +16,7 @@
  */
 
 import {request} from 'https';
-import {PasswordCheckVerification} from 'typescript-recaptcha-password-check';
+import {PasswordCheckVerification} from 'recaptcha-password-check-helpers';
 import yargs from 'yargs/yargs';
 
 const BASE_URL = 'https://recaptchaenterprise.googleapis.com';

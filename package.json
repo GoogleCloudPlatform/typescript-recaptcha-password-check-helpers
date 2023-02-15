@@ -10,7 +10,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc --build",
-    "test": "jasmine --config=jasmine.json"
+    "test": "jasmine --config=jasmine.json",
+    "prepare": "npm run build",
+    "prepublishOnly" : "npm test"
   },
   "dependencies": {
     "@types/node": "^18.11.9",
