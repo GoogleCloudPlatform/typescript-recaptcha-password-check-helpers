@@ -1,6 +1,6 @@
 {
   "name": "recaptcha-password-check-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A client library for Typescript for reCAPTCHA's private password check API.",
   "author": "reCAPTCHA Team <no-reply@google.com>",
   "repository": "GoogleCloudPlatform/typescript-recaptcha-password-check-helpers",
