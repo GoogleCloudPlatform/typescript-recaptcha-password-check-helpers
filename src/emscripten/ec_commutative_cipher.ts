@@ -33,6 +33,7 @@ export enum HashType {
   SHA256,
   SHA384,
   SHA512,
+  SSWU_RO,
 }
 
 /**
