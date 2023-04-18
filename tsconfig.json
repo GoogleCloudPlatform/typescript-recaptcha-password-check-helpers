@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "target": "es6",
-    "module": "commonjs",
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
     "allowJs": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "commonjs",
     "outDir": "dist",
-    "esModuleInterop": true
+    "skipLibCheck": true,
+    "target": "es6"
   },
   "exclude": ["node_modules", "example", "benchmarks", "dist"]
 }
