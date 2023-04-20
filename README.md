@@ -6,6 +6,22 @@ It exposes functionality to make password leak check requests in a private
 manner (i.e credentials are sent encrypted and the server cannot—and doesn't
 need to—decrypt them).
 
+## Example
+
+To run the example you need a
+[Google Cloud project](https://cloud.google.com/resource-manager/docs/creating-managing-projects?hl=en)
+and
+[enable reCAPTCHA Enterprise with an api key](https://cloud.google.com/recaptcha-enterprise/docs/set-up-non-google-cloud-environments-api-keys?hl=en).
+
+Execute:
+
+```
+cd example
+npm install
+npm run build
+node dist/main.js -u <username> -p <password> -i <project_id> -k <api_key>
+```
+
 ## Usage
 
 1.  Create a verification with some user credentials and extract the parameters
