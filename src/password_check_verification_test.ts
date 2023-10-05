@@ -49,6 +49,14 @@ describe('password check verification test', () => {
     expect(response.checkCredentialsLeaked(verification)).toBeTrue();
   });
 
+  it('canonicalizes the username', async () => {
+    const verification = await PasswordCheckVerification.create(
+        TEST_USERNAME + '@example.com', TEST_PASSWORD);
+    const response = await TestServerResponse.create(
+        verification, TEST_MATCHING_USERNAME_LIST);
+    expect(response.checkCredentialsLeaked(verification)).toBeTrue();
+  });
+
   it('returns not leak found', async () => {
     const verification =
         await PasswordCheckVerification.create(TEST_USERNAME, TEST_PASSWORD);

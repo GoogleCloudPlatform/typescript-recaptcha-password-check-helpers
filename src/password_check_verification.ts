@@ -62,8 +62,10 @@ export class PasswordCheckVerification {
     }
     const ecCipher = await PasswordCheckVerification.initEcCipher();
     const canonicalizedUsername = CryptoHelper.canonicalizeUsername(username);
+
     const hashedUsernamePasswordPair =
-        await CryptoHelper.hashUsernamePasswordPair(username, password);
+        await CryptoHelper.hashUsernamePasswordPair(
+            canonicalizedUsername, password);
     const encryptedUserCredentialsHash =
         ecCipher.encrypt(hashedUsernamePasswordPair);
     const lookupHashPrefix = CryptoHelper.bucketizeUsername(
