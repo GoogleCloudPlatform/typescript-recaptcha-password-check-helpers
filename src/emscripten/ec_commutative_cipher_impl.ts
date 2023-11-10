@@ -16,6 +16,7 @@
  */
 
 /**
+ * g3-format-clang
  * @fileoverview Implementation of EcCommutativeCipher in TypeScript.
  */
 

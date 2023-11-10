@@ -16,6 +16,7 @@
  */
 
 /**
+ * g3-format-clang
  * @fileoverview EcCommutativeCipher library.
  *
  * This library is not thread-safe.
