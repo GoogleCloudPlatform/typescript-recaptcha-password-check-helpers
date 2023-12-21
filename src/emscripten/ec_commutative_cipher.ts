@@ -16,15 +16,12 @@
  */
 
 /**
- * g3-format-clang
  * @fileoverview EcCommutativeCipher library.
  *
  * This library is not thread-safe.
  */
 
 import {EcCommutativeCipherImpl} from './ec_commutative_cipher_impl';
-
-
 
 /**
  * The hash function used by the ECCommutativeCipher in order to hash strings
@@ -45,13 +42,16 @@ export enum HashType {
    * Initializes client.
    */
   private constructor(
-      private readonly crypto: EcCommutativeCipherImpl,
-      private readonly ecCipher: number) {
+    private readonly crypto: EcCommutativeCipherImpl,
+    private readonly ecCipher: number,
+  ) {
   }
 
   static create(
-      crypto: EcCommutativeCipherImpl, curveId: number,
-      hashType: number): EcCommutativeCipher {
+    crypto: EcCommutativeCipherImpl,
+    curveId: number,
+    hashType: number,
+  ): EcCommutativeCipher {
     const ecCipher = crypto.createWithNewKey(curveId, hashType);
     if (ecCipher <= 0) {
       throw new Error('Failed to create WASM-wrapped EcCommutativeCipher.');
@@ -60,12 +60,16 @@ export enum HashType {
   }
 
   static createFromKey(
-      crypto: EcCommutativeCipherImpl, curveId: number, hashType: number,
-      key: Uint8Array): EcCommutativeCipher {
+    crypto: EcCommutativeCipherImpl,
+    curveId: number,
+    hashType: number,
+    key: Uint8Array,
+  ): EcCommutativeCipher {
     const ecCipher = crypto.createFromKey(curveId, hashType, key);
     if (ecCipher <= 0) {
       throw new Error(
-          'Failed to create WASM-wrapped EcCommutativeCipher from key.');
+        'Failed to create WASM-wrapped EcCommutativeCipher from key.',
+      );
     }
     return new EcCommutativeCipher(crypto, ecCipher);
   }
