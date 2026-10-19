@@ -93,8 +93,8 @@ export class PasswordCheckVerification {
 
     const serverEncryptedCredentialsHash =
         this.ecCipher.decrypt(reEncryptedUserCredentialsHash);
-    const reHashedEncryptedCredentialsHash =
-        createHash('sha256').update(serverEncryptedCredentialsHash).digest();
+    const reHashedEncryptedCredentialsHash = new Uint8Array(
+        createHash('sha256').update(serverEncryptedCredentialsHash).digest());
 
     const credentialsLeaked = encryptedLeakMatchPrefixList.some(
         (prefix) => this.isPrefix(reHashedEncryptedCredentialsHash, prefix));

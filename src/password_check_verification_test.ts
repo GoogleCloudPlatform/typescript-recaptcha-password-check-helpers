@@ -141,10 +141,7 @@ class TestServerResponse {
     const serverEncrypted =
         serverCipher.encrypt(await CryptoHelper.hashUsernamePasswordPair(
             credentials.username, credentials.password));
-// TODO: go/ts59upgrade - Remove this suppression after TS 5.9.2 upgrade
-//   TS2322: Type 'Buffer' is not assignable to type 'Uint8Array<ArrayBufferLike>'.
-// @ts-ignore
-    return createHash('sha256').update(serverEncrypted).digest();
+    return new Uint8Array(createHash('sha256').update(serverEncrypted).digest());
   }
 }
 

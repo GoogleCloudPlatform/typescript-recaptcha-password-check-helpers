@@ -19,7 +19,7 @@ export class BitPrefix {
   private static readonly BYTE_SIZE = 8;
 
   private constructor(
-      readonly prefix: BigInteger,  // = Uint8Array
+      readonly prefix: Uint8Array,
       readonly length: number) {}
 
   /**

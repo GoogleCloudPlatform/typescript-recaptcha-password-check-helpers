@@ -140,7 +140,7 @@ export class CryptoHelper {
         if (err !== null) {
           reject(err);
         } else {
-          resolve(data);
+          resolve(new Uint8Array(data));
         }
       });
     });
