@@ -1,6 +1,6 @@
 {
   "name": "recaptcha-password-check-helpers",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A client library for Typescript for reCAPTCHA's private password check API.",
   "author": "reCAPTCHA Team <no-reply@google.com>",
   "repository": "GoogleCloudPlatform/typescript-recaptcha-password-check-helpers",
@@ -14,10 +14,10 @@
     "prepare": "npm run build",
     "prepublishOnly" : "npm test"
   },
-  "dependencies": {
-    "@types/node": "^18.11.9",
-    "typescript": "^4.9.3",
-    "@types/jasmine": "^4.3.1",
-    "jasmine": "^4.5.0"
+  "devDependencies": {
+    "@types/jasmine": "^5.1.7",
+    "@types/node": "^22.13.10",
+    "jasmine": "^5.6.0",
+    "typescript": "^5.8.2"
   }
 }
