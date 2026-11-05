@@ -47,14 +47,30 @@ describe('crypto helper test', () => {
     expect(CryptoHelper.canonicalizeUsername('Test')).toEqual('test');
   });
 
+  it('Canonicalizes a username preserving uppercase international characters',
+     () => {
+       expect(CryptoHelper.canonicalizeUsername('Öl')).toEqual('Öl');
+     });
+
   it('Canonicalizes a username stripping dots', () => {
     expect(CryptoHelper.canonicalizeUsername('test.test')).toEqual('testtest');
+  });
+
+  it('Canonicalizes a username stripping multiple dots', () => {
+    expect(CryptoHelper.canonicalizeUsername('a.b.c@example.com'))
+        .toEqual('abc');
   });
 
   it('Canonicalizes a username stripping host', () => {
     expect(CryptoHelper.canonicalizeUsername('test@example.com'))
         .toEqual('test');
   });
+
+  it('Canonicalizes a username with multiple @ signs keeping all but the last',
+     () => {
+       expect(CryptoHelper.canonicalizeUsername('te@st@mail.com'))
+           .toEqual('te@st');
+     });
 
   it('Canonicalizes a username stripping host with i18n user', () => {
     expect(CryptoHelper.canonicalizeUsername('例え@例え.テスト'))

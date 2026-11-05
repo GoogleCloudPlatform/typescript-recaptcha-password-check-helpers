@@ -75,7 +75,7 @@ export class CryptoHelper {
       username = username.substring(0, atIndex);
     }
 
-    return username.toLowerCase().replace('.', '');
+    return username.replace(/\./g, '').replace(/[A-Z]/g, (c) => c.toLowerCase());
   }
 
   /**
